@@ -1,0 +1,36 @@
+# Config file for air
+
+[build]
+# Project root directory
+root = "."
+# Binary name
+bin = "./tmp/app"
+# Command to build the project
+cmd = "go build -o ./tmp/app cmd/main/main.go"
+# Delay for running the build command after a change
+delay = 1000 # 1000 milliseconds = 1 second
+
+[dev]
+# Command to run your project
+cmd = "./tmp/app"
+# Delay for running the command after the build is done
+delay = 1000 # 1000 milliseconds = 1 second
+
+[watch]
+# List of directories to watch for changes
+includes = [
+  "cmd",
+  "static",
+  "models",
+  "views",
+]
+# List of directories to exclude from watching
+excludes = [
+  "tmp",
+  "bin",
+  "node_modules",
+]
+
+[log]
+# Log level (debug, info, warn, error, fatal)
+level = "debug"

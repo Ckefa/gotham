@@ -1,0 +1,13 @@
+{{ block "users" . }}
+<div id="users" class="p-2 flex flex-col gap-2 bg-blue-300 w-[25vw]">
+    {{ range .Users }}
+    <div id="{{ .ID }}" class="gap-4 p-2 flex bg-gray-100">
+        <div>{{ .ID }} </div>
+        <div>{{ .Name }}</div>
+        <div>{{ .Phone }}</div>
+        <button hx-delete="/users?userId={{ .ID }}" hx-target="#users" hx-swap="outerHTML"
+            class="bg-red-400 rounded-xl pl-[4px] pr-[4px]">Delete</button>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,9 @@
+{{ block "user-form" . }}
+<form style="display: flex;" hx-post="/users" hx-target="#users" hx-swap="outerHTML">
+    <label>Name</label>
+    <input type="text" name="name" />
+    <label>Phone</label>
+    <input type="text" name="phone" />
+    <button type="submit">add</button>
+</form>
+{{ end }}

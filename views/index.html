@@ -1,0 +1,36 @@
+{{ block "index" . }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My App</title>
+    <meta name="description" content="Your description here">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Your Name">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script defer src="scripts.js"></script> <!-- Link to your JavaScript file -->
+    <script src="https://unpkg.com/htmx.org@2.0.1"
+        integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="bg-black text-white max-h-[4vh]">
+        {{ template "header" . }}
+    </header>
+
+    <main class="flex flex-col min-h-[90vh]">
+        {{ template "user-form" . }}
+        {{ template "users" . }}
+    </main>
+
+    <footer class="bg-yellow-100">
+        <p>&copy; 2024 Clinton Kefa. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+{{end}}
